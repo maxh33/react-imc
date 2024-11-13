@@ -1,18 +1,21 @@
 
-import './App.css'
+import React, { useState } from 'react'
+import styles from './App.module.css'
+import Form from './components/Form/Form'
 
-function App() {
+const App = () => {
+    const [imc, setImc] = useState(null);
 
-  const nome = "Max"
-
-  function retornaNome() {
-    return nome
-  }
+    const calculateIMC = (weight, height) => {
+        const imcValue = (weight / (height * height)).toFixed(2);
+        setImc(imcValue);
+    };
 
   return (
-    <>
-      <h1>Olá, {retornaNome()}</h1>
-    </>
+    <div className={styles.app}>
+      <h1>IMC Calculator</h1>
+      <Form calculateIMC={calculateIMC} />
+    </div>
   )
 }
 
