@@ -44,3 +44,8 @@ button:focus-visible {
     background-color: var(--buttonBackgroundColor);
   }
 }
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
