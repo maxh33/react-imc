@@ -10,17 +10,32 @@ const Form = ({ calculateIMC }) => {
         e.preventDefault();
         calculateIMC(weight, height);
     };
+    // function to handle the weight input
+    const handleWeightChange = (e) => {
+        const value = e.target.value;
+        if (parseInt(value, 10) <= 199) {
+            setWeight(value);
+        }
+    };
+    // function to handle the height input
+    const handleHeightChange = (e) => {
+        const value = e.target.value;
+        if (parseFloat(value) <= 2.5) {
+            setHeight(value);
+        }
+    };
 
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
                 <label htmlFor="weight">Weight (kg):</label>
-                <input 
-                    type="number" 
+                <InputMask
+                    mask="999"
+                    maskChar={null}
                     id="weight" 
-                    placeholder='Only numbers Ex: 50'
+                    placeholder='Ex: 50'
                     value={weight} 
-                    onChange={(e) => setWeight(e.target.value)} 
+                    onChange={handleWeightChange} 
                 />
             </div>
             <div className={styles.inputGroup}>
@@ -29,9 +44,9 @@ const Form = ({ calculateIMC }) => {
                     mask="9.99"
                     maskChar={null} 
                     id="height"
-                    placeholder='Only Numbers Ex: 1.70' 
+                    placeholder='Only Numbers Ex: 170' 
                     value={height} 
-                    onChange={(e) => setHeight(e.target.value)} 
+                    onChange={handleHeightChange} 
                 />
             </div>
             <button type="submit">Calculate IMC</button>
