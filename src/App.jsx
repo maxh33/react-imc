@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import styles from './App.module.css'
 import Form from './components/Form/Form'
+import Result from './components/Result/Result';
 
 const App = () => {
     const [imc, setImc] = useState(null);
@@ -15,6 +16,7 @@ const App = () => {
     <div className={styles.app}>
       <h1>IMC Calculator</h1>
       <Form calculateIMC={calculateIMC} />
+      {imc && <Result imc={imc} />}
     </div>
   )
 }
