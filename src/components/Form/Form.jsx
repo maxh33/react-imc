@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputMask from 'react-input-mask';
 import styles from './Form.module.css';
 
 const Form = ({ calculateIMC }) => {
@@ -24,8 +25,9 @@ const Form = ({ calculateIMC }) => {
             </div>
             <div className={styles.inputGroup}>
                 <label htmlFor="height">Height (m):</label>
-                <input 
-                    type="number" 
+                <InputMask
+                    mask="9.99"
+                    maskChar={null} 
                     id="height"
                     placeholder='Only Numbers Ex: 1.70' 
                     value={height} 
