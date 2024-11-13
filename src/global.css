@@ -17,6 +17,12 @@
     --textColor: #ffffff;
     --buttonBackgroundColor: #535bf2;
     --buttonHoverBackgroundColor: #747bff;
+    --colorRed: red;
+    --colorOrange: orange;
+    --colorPurple: purple;
+    --colorDarkGreen: darkgreen;
+    --colorGreen: green;
+    --colorBlue: blue;
     line-height: 1.5;
     font-weight: 400;
 
