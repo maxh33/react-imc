@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className={styles.app}>
-      <h1>IMC Calculator</h1>
+      <h1>IMC/BMI Calculator</h1>
       <Form calculateIMC={calculateIMC} />
       {error && <div className={styles.error}>{error}</div>}
       {imc && <Result imc={imc} />}

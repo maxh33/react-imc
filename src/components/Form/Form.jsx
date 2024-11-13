@@ -49,7 +49,7 @@ const Form = ({ calculateIMC }) => {
                     onChange={handleHeightChange} 
                 />
             </div>
-            <button type="submit">Calculate IMC</button>
+            <button type="submit">Calculate BMI</button>
         </form>
     );
 };
